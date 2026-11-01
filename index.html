@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#161815">
+  <title>Relay — Content operations</title>
+  <script>try{if(sessionStorage.getItem("relay-session")==="1")document.documentElement.classList.add("has-session")}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23161815'/%3E%3Crect x='6' y='7' width='13' height='18' rx='3' fill='none' stroke='%23f4f1ea' stroke-width='1.6'/%3E%3Crect x='13' y='7' width='13' height='18' rx='3' fill='none' stroke='%23e25b2a' stroke-width='1.6'/%3E%3C/svg%3E">
+</head>
+<body>
+  <div id="login" class="login">
+    <section class="login-hero">
+      <div>
+        <div class="logo">
+          <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
+            <rect x="4" y="6" width="16" height="20" rx="4" fill="none" stroke="currentColor" stroke-width="1.7"/>
+            <rect x="12" y="6" width="16" height="20" rx="4" fill="none" stroke="#e25b2a" stroke-width="1.7"/>
+          </svg>
+          <span><strong>Relay</strong><em>Content ops</em></span>
+        </div>
+        <h1>The loop that<br><em>compounds.</em></h1>
+        <p class="lede">One library. Every account. Relay builds variants from what already performs, then lines them up on a schedule.</p>
+      </div>
+      <div>
+        <div class="login-stats">
+          <div class="login-stat"><b id="login-views">18.5M</b><span>views this week</span></div>
+          <div class="login-stat"><b id="login-accounts">8</b><span>accounts connected</span></div>
+          <div class="login-stat"><b id="login-platforms">4</b><span>platforms</span></div>
+        </div>
+        <p class="hero-foot" style="margin-top:16px">TikTok · Instagram · YouTube · X</p>
+      </div>
+    </section>
+    <section class="login-panel">
+      <div class="login-card">
+        <p class="eyebrow">Welcome back</p>
+        <h2>Enter the workspace</h2>
+        <p class="intro">Credentials are filled for this demo. Continue to open Northwind.</p>
+        <div class="stack-form">
+          <div class="field">
+            <span id="lb-workspace">Workspace</span>
+            <div class="fake-input" role="textbox" aria-readonly="true" aria-labelledby="lb-workspace">
+              <span aria-hidden="true">********</span>
+            </div>
+          </div>
+          <div class="field">
+            <span id="lb-key">Access key</span>
+            <div class="fake-input" role="textbox" aria-readonly="true" aria-labelledby="lb-key">
+              <span aria-hidden="true">********</span>
+            </div>
+          </div>
+          <button type="button" id="login-btn" class="btn btn-primary btn-block" data-action="login">Enter workspace</button>
+        </div>
+        <p class="fine">Sample workspace. Nothing leaves this browser.</p>
+      </div>
+    </section>
+  </div>
+
+  <div id="app" class="app">
+    <aside class="sidebar">
+      <div class="logo">
+        <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <rect x="4" y="6" width="16" height="20" rx="4" fill="none" stroke="currentColor" stroke-width="1.7"/>
+          <rect x="12" y="6" width="16" height="20" rx="4" fill="none" stroke="#e25b2a" stroke-width="1.7"/>
+        </svg>
+        <span><strong>Relay</strong><em>Content ops</em></span>
+      </div>
+      <nav class="nav" aria-label="Workspace">
+        <button type="button" class="nav-btn" data-action="nav" data-nav="overview">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg>
+          Overview
+        </button>
+        <button type="button" class="nav-btn" data-action="nav" data-nav="accounts">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="9" r="3"/><path d="M4 18c.6-2.4 2.4-3.6 5-3.6s4.4 1.2 5 3.6"/><circle cx="17" cy="9" r="2.2"/><path d="M16 14.4c1.8.3 3.2 1.3 3.8 3.6"/></svg>
+          Accounts
+        </button>
+        <button type="button" class="nav-btn" data-action="nav" data-nav="library">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M10 9.5v5l4.5-2.5L10 9.5z"/></svg>
+          Library
+        </button>
+        <button type="button" class="nav-btn" data-action="nav" data-nav="variants">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4l7 3.5v9L12 20l-7-3.5v-9L12 4z"/><path d="M12 12l7-3.5M12 12v8M12 12L5 8.5"/></svg>
+          Variants
+        </button>
+        <button type="button" class="nav-btn" data-action="nav" data-nav="schedule">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3.5V7M16 3.5V7M4 10h16"/></svg>
+          Schedule
+        </button>
+        <button type="button" class="nav-btn" data-action="nav" data-nav="analytics">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19V10M12 19V5M19 19v-7"/></svg>
+          Analytics
+        </button>
+      </nav>
+      <div class="side-foot">
+        <div class="workspace-chip">
+          <span class="avatar">NW</span>
+          <span>
+            <strong>Northwind</strong>
+            <small id="side-meta">8 accounts</small>
+          </span>
+        </div>
+        <div class="side-actions">
+          <button type="button" class="text-btn" data-action="reset">Reset sample data</button>
+          <button type="button" class="text-btn" data-action="logout">Sign out</button>
+        </div>
+      </div>
+    </aside>
+    <div class="main">
+      <header class="topbar">
+        <div>
+          <h1 id="page-title">Overview</h1>
+          <p id="page-sub" class="muted"></p>
+        </div>
+        <div class="top-meta">
+          <span class="pill">Sample data</span>
+          <time id="clock"></time>
+        </div>
+      </header>
+      <div id="view"></div>
+    </div>
+  </div>
+
+  <div id="modal-root"></div>
+  <div id="toast" aria-live="polite"></div>
+  <noscript><p style="padding:24px">Relay needs JavaScript to open this workspace.</p></noscript>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
